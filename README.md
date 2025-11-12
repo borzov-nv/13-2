@@ -13,6 +13,8 @@ sudo useradd -m cryptouser
 sudo ls -Al /home/cryptouser
 sudo cd /home
 sudo mount -t ecryptfs cryptouser cryptouser
+sudo umount cryptouser
+sudo ls -Al /home/cryptouser
 
 
 
