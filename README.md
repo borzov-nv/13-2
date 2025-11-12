@@ -11,17 +11,21 @@
 sudo apt install ecryptfs-utils
 sudo useradd -m cryptouser
 sudo ls -Al /home/cryptouser
-sudo ecryptfs-migrate-home -u cryptouser
+sudo cd /home
+sudo mount -t ecryptfs cryptouser cryptouser
+
+
+
+#sudo ecryptfs-migrate-home -u cryptouser
 
 *as cryptouser:*
-
-ls /home/.ecryptfs/cryptouser/.Private
-ls ~
+#ls /home/.ecryptfs/cryptouser/.Private
+#ls ~
 
 *You should see files with randomized, unreadable filenames. This confirms the data is encrypted.*
 *Check your actual home directory (/home/targetuser) to ensure all your files are present and readable.*
 
-sudo rm -rf /home/cryptouser.XXXXXXXX
+#sudo rm -rf /home/cryptouser.XXXXXXXX
 
 
 
